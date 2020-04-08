@@ -8,6 +8,7 @@
         //CREACION ATRIBUTOS
         private $id_cotratos; #int
         private $referencia; #int
+        private $id_empleado;
         private $titulo_trabajo; #string
         private $nombre_servicio; #string
         private $salario; #double
@@ -60,6 +61,16 @@
         public function getReferencia()
         {
             return $this->referencia;
+        }
+
+        public function setIdempleados($id_empleado)
+        {
+            $this->id_empleado=$id_empleado;
+        }
+
+        public function getIdempleado()
+        {
+            return $this->id_empleado;
         }
 
         public function setTitulotrabajo($titulo_trabajo)
