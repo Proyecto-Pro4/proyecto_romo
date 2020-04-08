@@ -1,6 +1,6 @@
 <?php
     /**
-     * LA CLASE TRATA DE LOS EMPLEADOS
+     * LA CLASE TRATA DE LOS PAISES
      */ 
     class paises
     {
@@ -19,7 +19,7 @@
 
         public function consultar()
         {
-            
+
         }
 
         public function setIdpais($id_pais)
