@@ -5,6 +5,7 @@
      */
     class contratos
     {
+        //CREACION ATRIBUTOS
         private $id_cotratos; #int
         private $referencia; #int
         private $titulo_trabajo; #string
@@ -18,8 +19,6 @@
         private $seguto_salud; #string
         private $situacion; #string
         private $regimen_laborar; #string
-
-
         
         function __construct()
         {
@@ -43,9 +42,24 @@
         }
 
         //SETTER AND GETTER METHOD
-        public function setIdContrato()
+        public function setIdcontratos($id_cotratos)
         {
-            
+            $this-> id_contratos=$id_cotratos;
+        }
+
+        public function getIdcontratos()
+        {
+            return $this->id_cotratos;
+        }
+
+        public function setReferencia($referencia)
+        {
+            $this-> referencia=$referencia;
+        }
+
+        public function getReferencia()
+        {
+            return $this->referencia;
         }
 
     }
