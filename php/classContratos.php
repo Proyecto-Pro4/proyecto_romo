@@ -26,7 +26,7 @@
             
         }
 
-        //METODOS PARA LA BASE DE DATOS
+        //DATABASE METHOD
         public function crear()
         {
 
@@ -42,6 +42,11 @@
 
         }
 
+        //SETTER AND GETTER METHOD
+        public function setIdContrato()
+        {
+            
+        }
 
     }
 
