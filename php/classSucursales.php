@@ -1,7 +1,7 @@
 <?php
 
     /**
-     * LA CLASE TRATA DE LOS EMPLEADOS
+     * LA CLASE TRATA DE LOS SUCURSALES
      */
 
      class sucursales
