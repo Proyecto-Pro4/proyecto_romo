@@ -2,7 +2,7 @@
 <!--NAVEGADOR SUPERIOR-->
 <!------------------------------------------------------------------------->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <img src="../interfaces/img/logo.jpg" alt="CECESOFT" height="38" width="" style="box-align: left">
+    <img src="../img/logo.jpg" alt="CECESOFT" height="38" width="" style="box-align: left">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,13 +33,13 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="../interfaces/img/01.jpeg" alt="First slide">
+                <img class="d-block w-100" src="../img/01.jpeg" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="../interfaces/img/02.jpeg" alt="Second slide">
+                <img class="d-block w-100" src="../img/02.jpeg" alt="Second slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="../interfaces/img/03.jpeg" alt="Third slide">
+                <img class="d-block w-100" src="../img/03.jpeg" alt="Third slide">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -73,7 +73,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <a href="../interfaces/php/administrar.php"><button type="button" class="btn btn-info">Administrar Contratos</button></a>
+                            <a href="../php/administrar.php"><button type="button" class="btn btn-info">Administrar Contratos</button></a>
                         </div>
                         <div class="col">
                             <button type="button" class="btn btn-info">Nuestra Historia</button>

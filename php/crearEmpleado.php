@@ -1,4 +1,4 @@
-<?php include("../indludes/admin/header.php"); ?>
+<?php include("../includes/admin/header.php"); ?>
 <!------------------------------------------------------------------------->
 <!--NAVI-->
 <!------------------------------------------------------------------------->
@@ -127,7 +127,7 @@
                 <br>
                 <div class="row mb-3" style="margin-left: 0; margin-right: 0;">
                     <div style="border: 1px solid black; border-radius: 5px;">
-                        <img src="foto-perfil.png" alt="" style="min-width: 3cm; max-width: 3cm; max-height: 4cm;">
+                        <img src="#" alt="" style="min-width: 3cm; max-width: 3cm; max-height: 4cm;">
                     </div>
                     <div class="col-md-5">
                         <div class="form-group">
@@ -333,4 +333,4 @@
     </div>
     <!------------------------------------------------------------------------->
     <!------------------------------------------------------------------------->
-    <?php include("../indludes/admin/footer.php"); ?>
+    <?php include("../includes/admin/footer.php"); ?>
