@@ -1,4 +1,4 @@
-<?php include("../interfaces/indludes/index/header.php"); ?>
+<?php include("../includes/index/header.php"); ?>
 <!--NAVEGADOR SUPERIOR-->
 <!------------------------------------------------------------------------->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -138,4 +138,4 @@
     </nav>
 </footer>
 <!------------------------------------------------------------------------->
-<?php include("../interfaces/indludes/index/footer.php"); ?>
+<?php include("../interfaces/includes/index/footer.php"); ?>
