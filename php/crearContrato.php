@@ -46,7 +46,7 @@
                 </li>
                 <li>
                     <form class="form-inline my-2 my-lg-0">
-                        <input id="buscador" class="form-control mr-sm-2" type="text" placeholder="Buscar... (ej. numero de referencia)">
+                        <input name="buscador" id="buscador" class="form-control mr-sm-2" type="text" placeholder="Buscar... (ej. numero de referencia)">
                         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
                     </form>
                 </li>
@@ -238,15 +238,15 @@
                                             <div class="col-md-6">
                                                 <legend><strong>Afiliaciones</strong></legend>
                                                 <div class="form-group row">
-                                                    <label for="afiliacion" class="col-sm-5 col-form-label">Salud</label>
+                                                    <label for="salud" class="col-sm-5 col-form-label">Salud</label>
                                                     <div class="col-sm-7">
-                                                        <input type="text" class="form-control" name="afiliacion" id="aficiliacion">
+                                                        <input type="text" class="form-control" name="salud" id="salud" placeholder="Intruducir EPS">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Pensión</label>
+                                                    <label for="pension" class="col-sm-5 col-form-label">Pensión</label>
                                                     <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="tip_documento">
+                                                        <input type="text" class="form-control" name="pension" id="pension" placeholder="Fodo de pensiones">
                                                     </div>
                                                 </div>
                                             </div>                                            

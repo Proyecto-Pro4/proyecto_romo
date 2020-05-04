@@ -162,25 +162,25 @@
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Dirección de Trabajo</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="direc_trabajo" autofocus>
+                                                    <input type="text" class="form-control" id="direc_trabajo" name="direc_trabajo" autofocus>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Ubicación de Trabajo</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="ubica_trabajo">
+                                                    <input type="text" class="form-control" id="ubica_trabajo" name="ubica_trabajo">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">E-mail de trabajo</label>
                                                 <div class="col-sm-7">
-                                                    <input type="email" class="form-control" id="email">
+                                                    <input type="email" class="form-control" id="email" name="email">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Telefono</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="telefono">
+                                                    <input type="text" class="form-control" id="telefono" name="telefono">
                                                 </div>
                                             </div>
                                         </div>
@@ -190,19 +190,19 @@
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Departamento</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="departamento">
+                                                    <input type="text" class="form-control" id="departamento" name="departamento">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Titulo de Trabajo</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="titu_traba">
+                                                    <input type="text" class="form-control" id="titu_traba" name="titu_traba">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Jefe de area</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="jefe_area">
+                                                    <input type="text" class="form-control" id="jefe_area" name="jefe_area">
                                                 </div>
                                             </div>
                                         </div>
@@ -220,37 +220,37 @@
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Nacionalidad</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="nacionalidad">
+                                                    <input type="text" class="form-control" id="nacionalidad" name="nacionalidad">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Tipo de documento</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="tip_documento">
+                                                    <input type="text" class="form-control" id="tip_documento" name="tip_documento">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Número de identificación</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="num_identificacion">
+                                                    <input type="text" class="form-control" id="num_identificacion" name="num_identificacion">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Número de pasaporte</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="num_pasaporte">
+                                                    <input type="text" class="form-control" id="num_pasaporte" name="num_pasaporte">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Fecha de nacimiento</label>
                                                 <div class="col-sm-7">
-                                                    <input type="date" class="form-control" id="fecha_nacimiento">
+                                                    <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Lugar de nacimiento</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="lugar_nacimiento">
+                                                    <input type="text" class="form-control" id="lugar_nacimiento" name="lugar_nacimiento">
                                                 </div>
                                             </div>
                                         </div>
@@ -259,19 +259,19 @@
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Dirección particular</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="direccion_particular">
+                                                    <input type="text" class="form-control" id="direccion_particular" name="direccion_particular">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Email personal</label>
                                                 <div class="col-sm-7">
-                                                    <input type="email" class="form-control" id="email_personal">
+                                                    <input type="email" class="form-control" id="email_personal" name="email_personal">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Contacto de emergencia</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="contacto_emer">
+                                                    <input type="text" class="form-control" id="contacto_emer" name="contacto_emer">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -288,7 +288,7 @@
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Estado civil</label>
                                                 <div class="col-sm-7">
-                                                    <select class="form-control" id="exampleSelect1">
+                                                    <select class="form-control" id="estado_civil" name="estado_civil">
                                                         <option>Elegir...</option>
                                                         <option>Soltero/a</option>
                                                         <option>Casado/a</option>
@@ -311,13 +311,13 @@
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Numero de Cuenta</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="num_cuenta">
+                                                    <input type="text" class="form-control" id="num_cuenta" name="num_cuenta">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-5 col-form-label">Banco</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" class="form-control" id="banco">
+                                                    <input type="text" class="form-control" id="banco" name="banco">
                                                 </div>
                                             </div>
                                         </div>                                        
