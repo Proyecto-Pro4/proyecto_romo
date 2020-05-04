@@ -73,7 +73,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <a href="../php/administrar.php"><button type="button" class="btn btn-info">Administrar Contratos</button></a>
+                            <a href="../proyecto_romo/php/administrar.php"><button type="button" class="btn btn-info">Administrar Contratos</button></a>
                         </div>
                         <div class="col">
                             <button type="button" class="btn btn-info">Nuestra Historia</button>

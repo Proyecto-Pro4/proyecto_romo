@@ -108,7 +108,7 @@
     <div class="overlay" id="overlay">
         <div class="popup" id="popup">
             <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="border-radius: 15px; margin-top: 25px;">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="height: 65px; border-radius: 15px; margin-bottom: 5px">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -116,7 +116,7 @@
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto" style="margin-left: 20px;">
                             <li class="nav-item">
-                                <a class="nav-link" href="#" style="font-size: 50px;"><i class="fas fa-save"></i></a>
+                                <a id="guardar" class="nav-link" href="#" style="font-size: 50px;"><i class="fas fa-save"></i></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" style="font-size: 50px;" id="close"><i class="fab fa-xbox"></i></a>
@@ -124,7 +124,6 @@
                         </ul>
                     </div>
                 </nav>
-                <br>
                 <div class="row mb-3" style="margin-left: 0; margin-right: 0;">
                     <div style="border: 1px solid black; border-radius: 5px;">
                         <img src="#" alt="" style="min-width: 3cm; max-width: 3cm; max-height: 4cm;">
