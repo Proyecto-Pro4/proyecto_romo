@@ -62,7 +62,7 @@
         <h2>Administración</h2>
         <h3>de contratos</h3>
         <ul>
-            <li><a href="#"><i class="fas fa-file-contract"></i>Contratos</a></li>
+            <li><a href="../php/crearContrato.php"><i class="fas fa-file-contract"></i>Contratos</a></li>
             <li><a href="../php/crearEmpleado.php"><i class="fas fa-users"></i>Empleados</a></li>
         </ul>
     </div>
