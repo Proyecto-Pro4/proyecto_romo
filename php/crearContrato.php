@@ -105,8 +105,8 @@
     <!------------------------------------------------------------------------->
     <!--FORMULARIO-->
     <!------------------------------------------------------------------------->
-    <div class="overlay" id="overlay">
-        <div class="popup" id="popup">
+    <div class="overlay2" id="overlay2">
+        <div class="popup2" id="popup2">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="height: 65px; border-radius: 15px; margin-bottom: 5px">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -141,14 +141,14 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label for="empleado" class="col-form-label" style="margin-right: 10px;">Empleado</label>
+                            <label for="empleado" class="col-form-label" style="margin-right: 79px;">Empleado</label>
                             <div class="col-sm-7">
                                 <input type="text" class="form-control" name="empleado" id="empleado" placeholder="Empleado">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="tit_trabajo" class="col-form-label" style="margin-right: 10px;">Titulo de Trabajo</label>
-                            <div class="col-sm-7"> 
+                            <label for="tit_trabajo" class="col-form-label" style="margin-right: 32px;">Titulo de Trabajo</label>
+                            <div class="col-sm-7">
                                 <input type="text" class="form-control" name="tit_trabajo" id="tit_trabajo" placeholder="Titulo de Trabajo">
                             </div>
                         </div>
@@ -164,67 +164,64 @@
                 <div class="container">
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#infoPub">Información Pública</a>
+                            <a class="nav-link active" data-toggle="tab" href="#info">Información</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#infoPer">Informacion Personal</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#banca">Cuentas Bancarias</a>
+                            <a class="nav-link" data-toggle="tab" href="#dataLab">Datos Laborales</a>
                         </li>
                     </ul>
                     <fieldset>
                         <div id="myTabContent" class="tab-content">
-                            <div class="tab-pane fade active show" id="infoPub">
+                            <div class="tab-pane fade active show" id="info">
                                 <div class="tab-pane fade p-3 active show" id="info-publica" role="tabpanel" aria-labelledby="info-publica-tab">
                                     <form action="#" method="POST">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <legend><strong>Informacion de Contacto</strong></legend>
+                                                <legend><strong>Salarios y Complementos </strong></legend>
                                                 <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Dirección de Trabajo</label>
+                                                    <label for="salario" class="col-sm-5 col-form-label">Salario</label>
                                                     <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="direc_trabajo" autofocus>
+                                                        <input type="text" class="form-control" id="salario" name="salario" placeholder="Remuneracion Salarial">
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Ubicación de Trabajo</label>
+
+                                                <div class="form-groug row">
+                                                    <label for="salario" class="col-sm-5 col-form-label">Comentarios</label>
                                                     <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="ubica_trabajo">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">E-mail de trabajo</label>
-                                                    <div class="col-sm-7">
-                                                        <input type="email" class="form-control" id="email">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Telefono</label>
-                                                    <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="telefono">
+                                                        <textarea name="comentario" class="form-control" id="comentario" cols="30" rows="10" style="height: 100px;" placeholder="Comentarios"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6">
-                                                <legend><strong>Cargo</strong></legend>
+                                                <legend><strong>Duracion</strong></legend>
                                                 <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Departamento</label>
+                                                    <label for="tipo_contrato" class="col-sm-5 col-form-label">Tipo de contrato</label>
                                                     <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="departamento">
+                                                        <select class="form-control" id="tipo_contrato">
+                                                            <option>Elegir...</option>
+                                                            <option>Término fijo</option>
+                                                            <option>Término Indefinido</option>
+                                                            <option>Obra o Labor terminada</option>
+                                                            <option>Prestacion de Servicios</option>
+                                                            <option>Aprendizaje</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Titulo de Trabajo</label>
+                                                    <label for="duracion" class="col-sm-5 col-form-label">Duracion</label>
                                                     <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="titu_traba">
+                                                        <input type="text" class="form-control" name="duracion" id="duracion" placeholder="Duracion del contrato">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Jefe de area</label>
+                                                    <label for="forma_pago" class="col-sm-5 col-form-label">Forma de Pago</label>
                                                     <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="jefe_area">
+                                                        <select class="form-control" id="forma_pago" name="forma_pago">
+                                                            <option>Elegir...</option>
+                                                            <option>Término fijo</option>
+                                                            <option>Término Indefinido</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -232,124 +229,32 @@
                                     </form>
                                 </div>
                             </div>
-                            <!--INFORMACION PUBLICA FIN-->
+                            <!--INFORMACION COTRATO FIN-->
 
-                            <div class="tab-pane fade" id="infoPer">
+                            <div class="tab-pane fade" id="dataLab">
                                 <div class="tab-pane fade p-3 active show" id="info-personal" role="tabpanel" aria-labelledby="info-personal-tab">
                                     <form action="#" method="POST">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <legend><strong>Ciudadanía e información adicional</strong></legend>
+                                                <legend><strong>Afiliaciones</strong></legend>
                                                 <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Nacionalidad</label>
+                                                    <label for="afiliacion" class="col-sm-5 col-form-label">Salud</label>
                                                     <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="nacionalidad">
+                                                        <input type="text" class="form-control" name="afiliacion" id="aficiliacion">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Tipo de documento</label>
+                                                    <label for="" class="col-sm-5 col-form-label">Pensión</label>
                                                     <div class="col-sm-7">
                                                         <input type="text" class="form-control" id="tip_documento">
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Número de identificación</label>
-                                                    <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="num_identificacion">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Número de pasaporte</label>
-                                                    <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="num_pasaporte">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Fecha de nacimiento</label>
-                                                    <div class="col-sm-7">
-                                                        <input type="date" class="form-control" id="fecha_nacimiento">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Lugar de nacimiento</label>
-                                                    <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="lugar_nacimiento">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <legend><strong>Información de contacto</strong></legend>
-                                                <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Dirección particular</label>
-                                                    <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="direccion_particular">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Email personal</label>
-                                                    <div class="col-sm-7">
-                                                        <input type="email" class="form-control" id="email_personal">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Contacto de emergencia</label>
-                                                    <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="contacto_emer">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Sexo</label>
-                                                    <div class="col-sm-7">
-                                                        <select class="form-control" id="exampleSelect1">
-                                                            <option>Elegir...</option>
-                                                            <option>Masculino</option>
-                                                            <option>Femenino</option>
-                                                            <option>Otro</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Estado civil</label>
-                                                    <div class="col-sm-7">
-                                                        <select class="form-control" id="exampleSelect1">
-                                                            <option>Elegir...</option>
-                                                            <option>Soltero/a</option>
-                                                            <option>Casado/a</option>
-                                                            <option>Unión Libres</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            </div>                                            
                                         </div>
                                     </form>
                                 </div>
                             </div>
                             <!--INFORMACION PERSONAL FIN-->
-
-                            <div class="tab-pane fade" id="banca">
-                                <div class="tab-pane fade p-3 active show" id="cuent-bancarias" role="tabpanel" aria-labelledby="cuent-bancarias-tab">
-                                    <form action="#">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <p><strong>Informacion Bancaria</strong></p>
-                                                <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Numero de Cuenta</label>
-                                                    <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="num_cuenta">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="" class="col-sm-5 col-form-label">Banco</label>
-                                                    <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="banco">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <!--INFORMACION BANCARA FIN-->
                         </div>
                     </fieldset>
                 </div>
