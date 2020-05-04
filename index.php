@@ -1,4 +1,4 @@
-<?php include("../includes/index/header.php"); ?>
+<?php include("../proyecto_romo/includes/index/header.php"); ?>
 <!--NAVEGADOR SUPERIOR-->
 <!------------------------------------------------------------------------->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -33,13 +33,13 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="../img/01.jpeg" alt="First slide">
+                <img class="d-block w-100" src="../proyecto_romo/img/01.jpeg" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="../img/02.jpeg" alt="Second slide">
+                <img class="d-block w-100" src="../proyecto_romo/img/02.jpeg" alt="Second slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="../img/03.jpeg" alt="Third slide">
+                <img class="d-block w-100" src="../proyecto_romo/img/03.jpeg" alt="Third slide">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -138,4 +138,4 @@
     </nav>
 </footer>
 <!------------------------------------------------------------------------->
-<?php include("../interfaces/includes/index/footer.php"); ?>
+<?php include("../proyecto_romo/includes/index/footer.php"); ?>
