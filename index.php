@@ -2,7 +2,7 @@
 <!--NAVEGADOR SUPERIOR-->
 <!------------------------------------------------------------------------->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <img src="../img/logo.jpg" alt="CECESOFT" height="38" width="" style="box-align: left">
+    <img src="../proyecto_romo/img/logo.jpg" alt="CECESOFT" height="38" width="" style="box-align: left">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
