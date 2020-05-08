@@ -2,7 +2,7 @@
 <!--NAVEGADOR SUPERIOR-->
 <!------------------------------------------------------------------------->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <img src="../proyecto_romo/img/logo.jpg" alt="CECESOFT" height="38" width="" style="box-align: left">
+    <img src="../img/logo.jpg" alt="CECESOFT" height="38" width="" style="box-align: left">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -101,20 +101,20 @@
     <div class="overlay" id="overlay">
         <div class="popup" id="popup">
             <h3>Iniciar Sesion</h3>
-            <form action="">
+            <form action="php/loginn/login.php" method="POST">
                 <label for="usuario">Usuario</label><br>
                 <label for="contraseña">Contraseña</label><br>
                 <div class="contenedor-inputs">
                     <div>
-                        <input class="caja" type="text" placeholder="Ingresar Usuario"><br>
+                        <input class="caja" name="usuario" type="text" placeholder="Ingresar Usuario"><br>
                     </div>
                     <div>
-                        <input class="caja" type="password" placeholder="Ingresar Contraseña">
+                        <input class="caja" name="clave" type="password" placeholder="Ingresar Contraseña">
                     </div>
                 </div>
                 <div>
                     <a href="#" class="btn-cerrar-popup"><button type="button" id="close" class="btn btn-danger">Cancelar</button></a>
-                    <input id="aceptar" type="button" class="btn btn-warning" value="Aceptar">
+                    <input id="aceptar" type="submit" class="btn btn-warning" value="Aceptar">
                 </div>
             </form>
         </div>

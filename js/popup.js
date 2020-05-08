@@ -1,3 +1,5 @@
+
+
 var abrir = document.getElementById('inicio'),
     overlay = document.getElementById('overlay'),
     popup = document.getElementById('popup'),
@@ -24,3 +26,6 @@ cerrar.addEventListener('click',function(){
     overlay2.classList.remove('active');
     popup2.classList.remove('active');
 });
+
+
+

@@ -149,3 +149,11 @@
         opacity: 1;
     }
 }
+.opciones{
+    display: block;
+    padding: 5px;
+}
+
+.contenedor{
+    width: 100%;
+}
