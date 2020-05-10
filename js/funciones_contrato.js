@@ -1,41 +1,38 @@
 var dt;
 
-function empleados() {
-
-
-    $('#contenido').on('click', 'a.borrar', function () {
+function contratos()
+{
+    $('#contenido').on('click','a.borrar', function() {
 
         var id = $(this).data('id');
 
         swal.fire({
 
             title: '¿Continuar?',
-            text: '¿Realmente desea borrar este registro?',
+            text: '¿Realmente desea borrar este registrio?',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Continuar'
-
+        
         }).then((e) => {
-
             if (e.value) {
 
                 var request = $.ajax({
 
                     method: 'get',
-                    url: './empleados/controladorEmpleados.php',
+                    url: './contratos/controladorContratos.php',
                     data: {
                         id: id,
                         accion: 'borrar'
                     },
                     dataType: 'json'
-
                 })
 
                 request.done(function (e) {
 
-                    if (e.respuesta == 'correcto') {
+                    if (e.respuesta == 'correcto'){
 
                         swal.fire(
                             'Borrado',
@@ -49,12 +46,10 @@ function empleados() {
 
                         swal.fire({
                             type: 'error',
-                            title: 'Error',
-                            text: 'Ocurrio un error durante el proceso'
+                            title: 'Eror',
+                            text: 'Ocurrio un erro durante el proceso'
                         })
-
                     }
-
                 });
 
                 request.fail(function (jqXHR, textStatus) {
@@ -64,34 +59,32 @@ function empleados() {
                         title: 'Error',
                         text: 'Ocurrio un error durante el proceso - ' + textStatus
                     })
-
                 });
-
             }
-
         })
-
+        
     });
 
     $('#contenido').on('click', 'button#cancelar', function () {
 
         $('#nuevo-editar').html('');
         $('#nuevo-editar').addClass('d-none');
-        $('#empleados').removeClass('d-none');
+        $('#contratos').removeClass('d-none');
 
     });
-    
-    //VOY AQUI PARA SEGUIR COPIANDO
+
+    //CORRERIR TODO PARA CONTRATOS
     $('#contenido').on('click', 'button#nuevo', function () {
 
-        $('#nuevo-editar').load('./empleados/nuevo_empleado.php');
+        $('#nuevo-editar').load('./contratos/nuevo_contrato.php');
         $('#nuevo-editar').removeClass('d-none');
-        $('#empleados').addClass('d-none');
+        $('#contratos').addClass('d-none');
 
+        //primer combobox
         $.ajax({
 
             type: 'get',
-            url: './sucursales/controladorSucursales.php',
+            url: './empleados/controladorEmpleados.php',
             data: { accion: 'listar' },
             dataType: 'json'
 
@@ -99,26 +92,44 @@ function empleados() {
 
             $.each(e.data, function (index, value) {
 
-                $('#sucursal').append('<option value="' + value.id + '">' + value.sucursal + "</option>")
+                $('#empleado_responsable').append('<option value="' + value.id + '">' + value.nom_empleado + "</option>")
+
+            });
+
+        });
+        //segundo combobox
+
+        $.ajax({
+
+            type: 'get',
+            url: './empresas/controlador_empresas.php',
+            data: { accion: 'listar' },
+            dataType: 'json'
+
+        }).done(function (e) {
+
+            $.each(e.data, function (index, value) {
+
+                $('#empresa_perteneciente').append('<option value="' + value.id + '">' + value.nombre_empresa + "</option>")
 
             });
 
         });
 
     });
-
+        
     $('#contenido').on('click', 'a.editar', function () {
 
         var id = $(this).data('id');
         var sucursal;
-        $('#nuevo-editar').load('./empleados/editar_empleados.php');
+        $('#nuevo-editar').load('./contratos/editar_contratos.php');
         $('#nuevo-editar').removeClass('d-none');
-        $('#empleados').addClass('d-none');
+        $('#contratos').addClass('d-none');
 
         $.ajax({
 
             type: 'get',
-            url: './empleados/controladorEmpleados.php',
+            url: './contratos/controladorContratos.php',
             data: {
                 id: id,
                 accion: 'consultar'
@@ -138,23 +149,20 @@ function empleados() {
             } else {
 
                 $('#id').val(e.id);
-                $('#nombre').val(e.nombre);
-                $('#usuario').val(e.usuario);
-                $('#password').val(e.password);
-                $('#correo').val(e.correo);
-                $('#edad_empleado').val(e.edad);
-                $('#genero').val(e.genero);
-                sucursal = e.sucursal;
-                $('#fecha_ingreso').val(e.fecha_ingreso);
-                $('#fecha_salida').val(e.fecha_salida);
+                $('#tipo_contrato').val(e.tipo_contrato);
+                $('#nom_empleado').val(e.empleado_responsable);
+                $('#nom_empresa').val(e.empresa_perteneciente);
+                $('#fecha_creacion').val(e.fecha_creacion);
+                $('#fecha_expiracion').val(e.fecha_expiracion);
             }
 
         });
 
+        //aqui va el que viene de otra tabla
         $.ajax({
 
             type: 'get',
-            url: './sucursales/controladorSucursales.php',
+            url: './empleados/controladorEmpleados.php',
             data: { accion: 'listar' },
             dataType: 'json'
 
@@ -164,26 +172,48 @@ function empleados() {
 
                 if (sucursal === value.id) {
 
-                    $('#sucursal').append('<option selected value="' + value.id + '">' + value.sucursal + "</option>")
+                    $('#empleado_responsable').append('<option selected value="' + value.id + '">' + value.nom_empleado + "</option>")
 
                 } else {
 
-                    $('#sucursal').append('<option value="' + value.id + '">' + value.sucursal + "</option>")
+                    $('#empleado_responsable').append('<option value="' + value.id + '">' + value.nom_empleado + "</option>")
+                }
+            });
+
+        });
+        //aqui va el que viene de otra tabla
+        $.ajax({
+
+            type: 'get',
+            url: './empresas/controlador_empresas.php',
+            data: { accion: 'listar' },
+            dataType: 'json'
+
+        }).done(function (e) {
+
+            $.each(e.data, function (index, value) {
+
+                if (sucursal === value.id) {
+
+                    $('#empresa_perteneciente').append('<option selected value="' + value.id + '">' + value.nombre_empresa + "</option>")
+
+                } else {
+
+                    $('#empresa_perteneciente').append('<option value="' + value.id + '">' + value.nombre_empresa + "</option>")
                 }
             });
 
         });
     });
-
 }
 
 function agregar() {
-    var datos = $('#f-empleado').serialize();
+    var datos = $('#f-contrato').serialize();
 
     $.ajax({
 
         type: 'get',
-        url: './empleados/controladorEmpleados.php?accion=nuevo',
+        url: './contratos/controladorContratos.php?accion=nuevo',
         data: datos,
         dataType: 'json'
 
@@ -201,7 +231,6 @@ function agregar() {
 
             $('#nuevo-editar').html('');
             $('#nuevo-editar').addClass('d-none');
-            $('#ciudades').removeClass('d-none');
 
         } else {
 
@@ -217,11 +246,11 @@ function agregar() {
 }
 
 function actualizar() {
-    var datos = $('#f-empleado').serialize();
+    var datos = $('#f-contrato').serialize();
     $.ajax({
 
         type: 'get',
-        url: './empleados/controladorEmpleados.php?accion=editar',
+        url: './contratos/controladorContratos.php?accion=editar',
         data: datos,
         dataType: 'json'
 
@@ -239,7 +268,7 @@ function actualizar() {
 
             $('#nuevo-editar').html('');
             $('#nuevo-editar').addClass('d-none');
-            $('#empleados').removeClass('d-none');
+            $('#contratos').removeClass('d-none');
 
         } else {
 
@@ -265,17 +294,14 @@ $(document).ready(() => {
 
     dt = $('#tabla').DataTable({
 
-        'ajax': './empleados/controladorEmpleados.php/?accion=listar',
+        'ajax': './contratos/controladorContratos.php/?accion=listar',
         'columns': [
             { 'data': 'id' },
-            { 'data': 'nom_empleado' },
-            { 'data': 'usuario' },
-            { 'data': 'correo' },
-            { 'data': 'edad_empleado' },
-            { 'data': 'genero' },
-            { 'data': 'id_sucursal' },
-            { 'data': 'fecha_ingreso' },
-            { 'data': 'fecha_salida' },
+            { 'data': 'tipo_contra' },
+            { 'data': 'empleado' },
+            { 'data': 'empresa_perteneciente' },
+            { 'data': 'fecha_creacion' },
+            { 'data': 'fecha_expiracion' },
             {
                 'data': 'id',
                 render: function (data) {
@@ -287,6 +313,6 @@ $(document).ready(() => {
 
     });
 
-    empleados();
+    contratos();
 
 })

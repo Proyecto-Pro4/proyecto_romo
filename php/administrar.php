@@ -91,8 +91,12 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin') {
             <h5 class="card-header">Administracion de contratos</h5>
             <div class="card-body">
                 <ul id="opciones">
-                    <li><a href="../phpcrearContrato.php"><i class="fas fa-file-contract"></i>Contratos</a></li>
+                    <li><a href="../php/contratos/index.php"><i class="fas fa-file-contract"></i>Contratos</a></li>
                     <li><a href="../php/empleados/index.php"><i class="fas fa-users"></i>Empleados</a></li>
+                    <li><a href="../php/empresas/index.php"><i class="fas fa-users"></i>Empresa</a></li>
+                    <li><a href="../php/gestionpaises/index.php"><i class="fas fa-users"></i>Pais</a></li>
+                    <li><a href="../php/gestiociudades/index.php"><i class="fas fa-users"></i>Ciudad</a></li>
+                    <li><a href="../php/proveedores/index.php"><i class="fas fa-users"></i>Proveedor</a></li>
                 </ul>
             </div>
         </div>

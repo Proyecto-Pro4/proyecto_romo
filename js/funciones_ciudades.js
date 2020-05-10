@@ -1,6 +1,6 @@
 var dt;
 
-function empleados() {
+function ciudades() {
 
 
     $('#contenido').on('click', 'a.borrar', function () {
@@ -24,7 +24,7 @@ function empleados() {
                 var request = $.ajax({
 
                     method: 'get',
-                    url: './empleados/controladorEmpleados.php',
+                    url: './gestiociudades/controlador_ciudades.php',
                     data: {
                         id: id,
                         accion: 'borrar'
@@ -77,21 +77,21 @@ function empleados() {
 
         $('#nuevo-editar').html('');
         $('#nuevo-editar').addClass('d-none');
-        $('#empleados').removeClass('d-none');
+        $('#ciudades').removeClass('d-none');
 
     });
-    
-    //VOY AQUI PARA SEGUIR COPIANDO
+
+
     $('#contenido').on('click', 'button#nuevo', function () {
 
-        $('#nuevo-editar').load('./empleados/nuevo_empleado.php');
+        $('#nuevo-editar').load('./gestiociudades/nueva_ciudad.php');
         $('#nuevo-editar').removeClass('d-none');
-        $('#empleados').addClass('d-none');
+        $('#ciudades').addClass('d-none');
 
         $.ajax({
 
             type: 'get',
-            url: './sucursales/controladorSucursales.php',
+            url: './gestionpaises/controlador_paises.php',
             data: { accion: 'listar' },
             dataType: 'json'
 
@@ -99,7 +99,7 @@ function empleados() {
 
             $.each(e.data, function (index, value) {
 
-                $('#sucursal').append('<option value="' + value.id + '">' + value.sucursal + "</option>")
+                $('#id_pais').append('<option value="' + value.id + '">' + value.nom_pais + "</option>")
 
             });
 
@@ -110,15 +110,15 @@ function empleados() {
     $('#contenido').on('click', 'a.editar', function () {
 
         var id = $(this).data('id');
-        var sucursal;
-        $('#nuevo-editar').load('./empleados/editar_empleados.php');
+        var pais;
+        $('#nuevo-editar').load('./gestiociudades/editar_ciudades.php');
         $('#nuevo-editar').removeClass('d-none');
-        $('#empleados').addClass('d-none');
+        $('#ciudades').addClass('d-none');
 
         $.ajax({
 
             type: 'get',
-            url: './empleados/controladorEmpleados.php',
+            url: './gestiociudades/controlador_ciudades.php',
             data: {
                 id: id,
                 accion: 'consultar'
@@ -136,25 +136,16 @@ function empleados() {
                 })
 
             } else {
-
                 $('#id').val(e.id);
-                $('#nombre').val(e.nombre);
-                $('#usuario').val(e.usuario);
-                $('#password').val(e.password);
-                $('#correo').val(e.correo);
-                $('#edad_empleado').val(e.edad);
-                $('#genero').val(e.genero);
-                sucursal = e.sucursal;
-                $('#fecha_ingreso').val(e.fecha_ingreso);
-                $('#fecha_salida').val(e.fecha_salida);
+                $('#nom_ciudad').val(e.ciudad);
+                pais = e.pais;
             }
 
         });
-
         $.ajax({
 
             type: 'get',
-            url: './sucursales/controladorSucursales.php',
+            url: './gestionpaises/controlador_paises.php',
             data: { accion: 'listar' },
             dataType: 'json'
 
@@ -162,13 +153,13 @@ function empleados() {
 
             $.each(e.data, function (index, value) {
 
-                if (sucursal === value.id) {
+                if (id_pais === value.id) {
 
-                    $('#sucursal').append('<option selected value="' + value.id + '">' + value.sucursal + "</option>")
+                    $('#id_pais').append('<option selected value="' + value.id + '">' + value.nom_pais + "</option>")
 
                 } else {
 
-                    $('#sucursal').append('<option value="' + value.id + '">' + value.sucursal + "</option>")
+                    $('#id_pais').append('<option value="' + value.id + '">' + value.nom_pais + "</option>")
                 }
             });
 
@@ -178,12 +169,12 @@ function empleados() {
 }
 
 function agregar() {
-    var datos = $('#f-empleado').serialize();
+    var datos = $('#f-ciudades').serialize();
 
     $.ajax({
 
         type: 'get',
-        url: './empleados/controladorEmpleados.php?accion=nuevo',
+        url: './gestiociudades/controlador_ciudades.php?accion=nuevo',
         data: datos,
         dataType: 'json'
 
@@ -217,11 +208,11 @@ function agregar() {
 }
 
 function actualizar() {
-    var datos = $('#f-empleado').serialize();
-    $.ajax({
-
+    var datos = $('#f-ciudades').serialize(); //ESTE F.CIUDADES ES EL MISMO QUE SE LE PONE
+    $.ajax({                                //AL ID DEL FORMULARIO EN CREAR CIUDAD Y EDITAR CIUDAD
+                                            //LO MISMO PARA LAS OTRAS LINEAS PARECIDAS
         type: 'get',
-        url: './empleados/controladorEmpleados.php?accion=editar',
+        url: './gestiociudades/controlador_ciudades.php?accion=editar',
         data: datos,
         dataType: 'json'
 
@@ -239,8 +230,9 @@ function actualizar() {
 
             $('#nuevo-editar').html('');
             $('#nuevo-editar').addClass('d-none');
-            $('#empleados').removeClass('d-none');
-
+            $('#ciudades').removeClass('d-none'); //OBSERVE, ESTE #CIUDADES ES EL MISMO QUE 
+            //SE LE PONE AL DIV DE INDEX.PHP AL PRINCIPIO
+            //LO MISMO PARA LAS OTRAS LINEAS PARECIDAS
         } else {
 
             swal.fire({
@@ -265,17 +257,11 @@ $(document).ready(() => {
 
     dt = $('#tabla').DataTable({
 
-        'ajax': './empleados/controladorEmpleados.php/?accion=listar',
+        'ajax': './gestiociudades/controlador_ciudades.php/?accion=listar',
         'columns': [
             { 'data': 'id' },
-            { 'data': 'nom_empleado' },
-            { 'data': 'usuario' },
-            { 'data': 'correo' },
-            { 'data': 'edad_empleado' },
-            { 'data': 'genero' },
-            { 'data': 'id_sucursal' },
-            { 'data': 'fecha_ingreso' },
-            { 'data': 'fecha_salida' },
+            { 'data': 'nom_ciudad' },
+            { 'data': 'pais' },
             {
                 'data': 'id',
                 render: function (data) {
@@ -287,6 +273,6 @@ $(document).ready(() => {
 
     });
 
-    empleados();
+    ciudades();
 
 })

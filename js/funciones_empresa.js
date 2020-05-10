@@ -1,6 +1,6 @@
 var dt;
 
-function empleados() {
+function empresas() {
 
 
     $('#contenido').on('click', 'a.borrar', function () {
@@ -24,7 +24,7 @@ function empleados() {
                 var request = $.ajax({
 
                     method: 'get',
-                    url: './empleados/controladorEmpleados.php',
+                    url: './empresas/controlador_empresas.php',
                     data: {
                         id: id,
                         accion: 'borrar'
@@ -77,21 +77,19 @@ function empleados() {
 
         $('#nuevo-editar').html('');
         $('#nuevo-editar').addClass('d-none');
-        $('#empleados').removeClass('d-none');
+        $('#empresa').removeClass('d-none');
 
     });
-    
-    //VOY AQUI PARA SEGUIR COPIANDO
     $('#contenido').on('click', 'button#nuevo', function () {
 
-        $('#nuevo-editar').load('./empleados/nuevo_empleado.php');
+        $('#nuevo-editar').load('./empresas/nuevo_empresa.php');
         $('#nuevo-editar').removeClass('d-none');
-        $('#empleados').addClass('d-none');
+        $('#empresa').addClass('d-none');
 
         $.ajax({
 
             type: 'get',
-            url: './sucursales/controladorSucursales.php',
+            url: './gestionpaises/controlador_paises.php',
             data: { accion: 'listar' },
             dataType: 'json'
 
@@ -99,7 +97,7 @@ function empleados() {
 
             $.each(e.data, function (index, value) {
 
-                $('#sucursal').append('<option value="' + value.id + '">' + value.sucursal + "</option>")
+                $('#pais').append('<option value="' + value.id + '">' + value.nom_pais + "</option>")
 
             });
 
@@ -111,14 +109,14 @@ function empleados() {
 
         var id = $(this).data('id');
         var sucursal;
-        $('#nuevo-editar').load('./empleados/editar_empleados.php');
+        $('#nuevo-editar').load('./empresas/editar_empresas.php');
         $('#nuevo-editar').removeClass('d-none');
-        $('#empleados').addClass('d-none');
+        $('#empresa').addClass('d-none');
 
         $.ajax({
 
             type: 'get',
-            url: './empleados/controladorEmpleados.php',
+            url: './empresas/controlador_empresas.php',
             data: {
                 id: id,
                 accion: 'consultar'
@@ -138,15 +136,10 @@ function empleados() {
             } else {
 
                 $('#id').val(e.id);
-                $('#nombre').val(e.nombre);
-                $('#usuario').val(e.usuario);
-                $('#password').val(e.password);
-                $('#correo').val(e.correo);
-                $('#edad_empleado').val(e.edad);
-                $('#genero').val(e.genero);
-                sucursal = e.sucursal;
-                $('#fecha_ingreso').val(e.fecha_ingreso);
-                $('#fecha_salida').val(e.fecha_salida);
+                $('#nombre_empresa').val(e.nombre_empresa);
+                $('#no_nit').val(e.no_nit);
+                $('#pais').val(e.pais);
+                $('#descripcion').val(e.descripcion);
             }
 
         });
@@ -154,7 +147,7 @@ function empleados() {
         $.ajax({
 
             type: 'get',
-            url: './sucursales/controladorSucursales.php',
+            url: './gestionpaises/controlador_paises.php',
             data: { accion: 'listar' },
             dataType: 'json'
 
@@ -164,11 +157,11 @@ function empleados() {
 
                 if (sucursal === value.id) {
 
-                    $('#sucursal').append('<option selected value="' + value.id + '">' + value.sucursal + "</option>")
+                    $('#pais').append('<option selected value="' + value.id + '">' + value.nom_pais + "</option>")
 
                 } else {
 
-                    $('#sucursal').append('<option value="' + value.id + '">' + value.sucursal + "</option>")
+                    $('#pais').append('<option value="' + value.id + '">' + value.nom_pais + "</option>")
                 }
             });
 
@@ -178,12 +171,12 @@ function empleados() {
 }
 
 function agregar() {
-    var datos = $('#f-empleado').serialize();
+    var datos = $('#f-empresa').serialize();
 
     $.ajax({
 
         type: 'get',
-        url: './empleados/controladorEmpleados.php?accion=nuevo',
+        url: './empresas/controlador_empresas.php?accion=nuevo',
         data: datos,
         dataType: 'json'
 
@@ -201,7 +194,6 @@ function agregar() {
 
             $('#nuevo-editar').html('');
             $('#nuevo-editar').addClass('d-none');
-            $('#ciudades').removeClass('d-none');
 
         } else {
 
@@ -217,11 +209,11 @@ function agregar() {
 }
 
 function actualizar() {
-    var datos = $('#f-empleado').serialize();
+    var datos = $('#f-empresa').serialize();
     $.ajax({
 
         type: 'get',
-        url: './empleados/controladorEmpleados.php?accion=editar',
+        url: './empresas/controlador_empresas.php?accion=editar',
         data: datos,
         dataType: 'json'
 
@@ -239,7 +231,7 @@ function actualizar() {
 
             $('#nuevo-editar').html('');
             $('#nuevo-editar').addClass('d-none');
-            $('#empleados').removeClass('d-none');
+            $('#empresa').removeClass('d-none');
 
         } else {
 
@@ -265,17 +257,13 @@ $(document).ready(() => {
 
     dt = $('#tabla').DataTable({
 
-        'ajax': './empleados/controladorEmpleados.php/?accion=listar',
+        'ajax': './empresas/controlador_empresas.php/?accion=listar',
         'columns': [
             { 'data': 'id' },
-            { 'data': 'nom_empleado' },
-            { 'data': 'usuario' },
-            { 'data': 'correo' },
-            { 'data': 'edad_empleado' },
-            { 'data': 'genero' },
-            { 'data': 'id_sucursal' },
-            { 'data': 'fecha_ingreso' },
-            { 'data': 'fecha_salida' },
+            { 'data': 'nombre_empresa' },
+            { 'data': 'no_nit' },
+            { 'data': 'id_pais' },
+            { 'data': 'descripcion' },
             {
                 'data': 'id',
                 render: function (data) {
@@ -287,6 +275,6 @@ $(document).ready(() => {
 
     });
 
-    empleados();
+    empresas();
 
 })

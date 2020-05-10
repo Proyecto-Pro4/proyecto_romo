@@ -1,6 +1,6 @@
 var dt;
 
-function empleados() {
+function paises() {
 
 
     $('#contenido').on('click', 'a.borrar', function () {
@@ -24,7 +24,7 @@ function empleados() {
                 var request = $.ajax({
 
                     method: 'get',
-                    url: './empleados/controladorEmpleados.php',
+                    url: './gestionpaises/controlador_paises.php',
                     data: {
                         id: id,
                         accion: 'borrar'
@@ -77,48 +77,39 @@ function empleados() {
 
         $('#nuevo-editar').html('');
         $('#nuevo-editar').addClass('d-none');
-        $('#empleados').removeClass('d-none');
+        $('#paises').removeClass('d-none');
 
     });
-    
-    //VOY AQUI PARA SEGUIR COPIANDO
+
+
     $('#contenido').on('click', 'button#nuevo', function () {
 
-        $('#nuevo-editar').load('./empleados/nuevo_empleado.php');
+        $('#nuevo-editar').load('./gestionpaises/nuevo_pais.php');
         $('#nuevo-editar').removeClass('d-none');
-        $('#empleados').addClass('d-none');
+        $('#paises').addClass('d-none');
 
         $.ajax({
 
             type: 'get',
-            url: './sucursales/controladorSucursales.php',
+            url: './gestionpaises/controlador_paises.php',
             data: { accion: 'listar' },
             dataType: 'json'
 
-        }).done(function (e) {
-
-            $.each(e.data, function (index, value) {
-
-                $('#sucursal').append('<option value="' + value.id + '">' + value.sucursal + "</option>")
-
-            });
-
-        });
+        })
 
     });
 
     $('#contenido').on('click', 'a.editar', function () {
 
         var id = $(this).data('id');
-        var sucursal;
-        $('#nuevo-editar').load('./empleados/editar_empleados.php');
+        $('#nuevo-editar').load('./gestionpaises/editar_pais.php');
         $('#nuevo-editar').removeClass('d-none');
-        $('#empleados').addClass('d-none');
+        $('#paises').addClass('d-none');
 
         $.ajax({
 
             type: 'get',
-            url: './empleados/controladorEmpleados.php',
+            url: './gestionpaises/controlador_paises.php',
             data: {
                 id: id,
                 accion: 'consultar'
@@ -138,39 +129,9 @@ function empleados() {
             } else {
 
                 $('#id').val(e.id);
-                $('#nombre').val(e.nombre);
-                $('#usuario').val(e.usuario);
-                $('#password').val(e.password);
-                $('#correo').val(e.correo);
-                $('#edad_empleado').val(e.edad);
-                $('#genero').val(e.genero);
-                sucursal = e.sucursal;
-                $('#fecha_ingreso').val(e.fecha_ingreso);
-                $('#fecha_salida').val(e.fecha_salida);
+                $('#nom_paies').val(e.pais);
+               
             }
-
-        });
-
-        $.ajax({
-
-            type: 'get',
-            url: './sucursales/controladorSucursales.php',
-            data: { accion: 'listar' },
-            dataType: 'json'
-
-        }).done(function (e) {
-
-            $.each(e.data, function (index, value) {
-
-                if (sucursal === value.id) {
-
-                    $('#sucursal').append('<option selected value="' + value.id + '">' + value.sucursal + "</option>")
-
-                } else {
-
-                    $('#sucursal').append('<option value="' + value.id + '">' + value.sucursal + "</option>")
-                }
-            });
 
         });
     });
@@ -178,12 +139,10 @@ function empleados() {
 }
 
 function agregar() {
-    var datos = $('#f-empleado').serialize();
-
+    var datos = $('#f-paises').serialize();
     $.ajax({
-
         type: 'get',
-        url: './empleados/controladorEmpleados.php?accion=nuevo',
+        url: './gestionpaises/controlador_paises.php?accion=nuevo',
         data: datos,
         dataType: 'json'
 
@@ -217,11 +176,11 @@ function agregar() {
 }
 
 function actualizar() {
-    var datos = $('#f-empleado').serialize();
-    $.ajax({
-
+    var datos = $('#f-paises').serialize(); //ESTE F.CIUDADES ES EL MISMO QUE SE LE PONE
+    $.ajax({                                //AL ID DEL FORMULARIO EN CREAR CIUDAD Y EDITAR CIUDAD
+                                            //LO MISMO PARA LAS OTRAS LINEAS PARECIDAS
         type: 'get',
-        url: './empleados/controladorEmpleados.php?accion=editar',
+        url: './gestionpaises/controlador_paises.php?accion=editar',
         data: datos,
         dataType: 'json'
 
@@ -239,8 +198,9 @@ function actualizar() {
 
             $('#nuevo-editar').html('');
             $('#nuevo-editar').addClass('d-none');
-            $('#empleados').removeClass('d-none');
-
+            $('#paises').removeClass('d-none'); //OBSERVE, ESTE #CIUDADES ES EL MISMO QUE 
+            //SE LE PONE AL DIV DE INDEX.PHP AL PRINCIPIO
+            //LO MISMO PARA LAS OTRAS LINEAS PARECIDAS
         } else {
 
             swal.fire({
@@ -265,17 +225,10 @@ $(document).ready(() => {
 
     dt = $('#tabla').DataTable({
 
-        'ajax': './empleados/controladorEmpleados.php/?accion=listar',
+        'ajax': './gestionpaises/controlador_paises.php/?accion=listar',
         'columns': [
             { 'data': 'id' },
-            { 'data': 'nom_empleado' },
-            { 'data': 'usuario' },
-            { 'data': 'correo' },
-            { 'data': 'edad_empleado' },
-            { 'data': 'genero' },
-            { 'data': 'id_sucursal' },
-            { 'data': 'fecha_ingreso' },
-            { 'data': 'fecha_salida' },
+            { 'data': 'nom_pais' },
             {
                 'data': 'id',
                 render: function (data) {
@@ -287,6 +240,6 @@ $(document).ready(() => {
 
     });
 
-    empleados();
+    paises();
 
 })

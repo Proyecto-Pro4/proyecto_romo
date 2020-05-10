@@ -1,14 +1,14 @@
 <?php 
 
-	require_once './modelo_paises.php';
+	require_once './modeloContrato.php';
 
 	$datos = $_GET;
 
 	switch ($_GET['accion']) {
 		case 'editar':
 
-			$pais = new Paises();
-			$resultado = $pais->editar($datos);
+			$contrato = new Contrato();
+			$resultado = $contrato->editar($datos);
 
 			if ($resultado == true || $resultado > 0) {
 				$json = array(
@@ -26,8 +26,8 @@
 
 		case 'nuevo':
 
-			$pais = new Paises();
-			$resultado = $pais->crear($datos);
+			$contrato = new Contrato();
+			$resultado = $contrato->crear($datos);
 
 			if ($resultado == true || $resultado > 0) {
 				$json = array(
@@ -45,8 +45,8 @@
 
 		case 'borrar':
 
-			$pais = new Paises();
-			$resultado = $pais->eliminar($datos['id']);
+			$contrato = new Contrato();
+			$resultado = $contrato->eliminar($datos['id']);
 
 			if ($resultado > 0) {
 				$json = array(
@@ -64,19 +64,21 @@
 
 		case 'consultar':
 
-			$pais  = new Paises();
-			$pais->consultar($datos['id']);
+			$contrato = new Contrato();
+			$contrato->consultar($datos['id']);
 
-			if ($pais->getId_pais() == null) {
+			if ($contrato->getId() == null) {
 				$json = array(
                 	'respuesta' => 'no existe'
             	);
 			} else {
 				$json = array(
-					'id' => $pais->getId_pais(),
-					'nom_pais' => $pais->getNom_pais(),
-					//'id_pais' => $ciudad->getId_pais(),
-					
+					'id' => $contrato->getId(),
+					'tipo_contra' => $contrato->getTipo_contrato(),
+					'empleado' => $contrato->getId_empleado(),
+					'empresa_perteneciente' => $contrato->getId_empresa(),
+					'fecha_creacion' => $contrato->getFecha_creacion(),
+					'fecha_expitacion' => $contrato->getFecha_expiracion(),
                 	'respuesta' => 'existe'
             	);
 			}
@@ -87,8 +89,8 @@
 
 		case 'listar':
 
-			$pais = new Paises();
-			$lista = $pais->listar();
+			$contrato = new Contrato();
+			$lista = $contrato->listar();
 
 			echo json_encode(array('data' => $lista), JSON_UNESCAPED_UNICODE);
 
